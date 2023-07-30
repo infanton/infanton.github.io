@@ -16,7 +16,7 @@ function updateTimer(timeInSeconds) {
   timerValueElement.textContent = timeInSeconds;
 }
 
-let timerSeconds = 120;
+let timerSeconds = 90d;
 function startTimer() {
   updateTimer(timerSeconds);
 
@@ -27,7 +27,7 @@ function startTimer() {
 
     if (timerSeconds === 0) {
       nextYear();
-      timerSeconds = 120;
+      timerSeconds = 90;
     }
   }, 1000);
 }
@@ -45,24 +45,24 @@ function updateChart() {
   nameElement.text(currentYearData.name).append;
   title1Element.text(currentYearData.title1);
   description1Element
-    .html('')
-    .text(`${currentYearData.description1} `)
+    .html(`${currentYearData.description1}<br><br>`)
     .append('a')
     .attr('href', `${currentYearData.link1}`)
+    .attr('target', '_blank') 
     .text('reference link');
   title2Element.text(currentYearData.title2);
   description2Element
-    .html('')
-    .text(`${currentYearData.description2} `)
+    .html(`${currentYearData.description2}<br><br>`)
     .append('a')
     .attr('href', `${currentYearData.link2}`)
+    .attr('target', '_blank') 
     .text('reference link');
   title3Element.text(currentYearData.title3);
   description3Element
-    .html('')
-    .text(`${currentYearData.description3} `)
+    .html(`${currentYearData.description3}<br><br>`)
     .append('a')
     .attr('href', `${currentYearData.link3}`)
+    .attr('target', '_blank') 
     .text('reference link');
 
   chartContainer.selectAll('.dem-bar')
@@ -83,7 +83,7 @@ function prevYear() {
   updateChart();
 }
 
-d3.csv('/data/us_election_results.csv').then(function (data) {
+d3.csv('/data/dataset.csv').then(function (data) {
 
   dataset = data.map(d => ({
     year: +d.year, 
