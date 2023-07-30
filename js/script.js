@@ -9,6 +9,10 @@ const description1Element = d3.select('#description1');
 const description2Element = d3.select('#description2');
 const description3Element = d3.select('#description3');
 const chartContainer = d3.select('#chart');
+const hiddenContainer2Image = d3.select('#hiddenContainer2Image');
+const hiddenContainer2Name = d3.select('#hiddenContainer2Name');
+const hiddenContainer1Bio = d3.select("#hiddenContainer1Bio")
+const hiddenContainer1BioTitle = d3.select("#hiddenContainer1BioTitle")
 let dataset;
 
 function updateTimer(timeInSeconds) {
@@ -35,6 +39,7 @@ function startTimer() {
 function updateChart() {
   const currentYearData = dataset[currentYearIndex];
   yearElement.text(`Election Year: ${currentYearData.year}`);
+  
   imageElement
     .html('')
     .append('img')
@@ -43,27 +48,47 @@ function updateChart() {
     .attr('width', '250')
     .attr('height', '350');
   nameElement.text(currentYearData.name).append;
+  
   title1Element.text(currentYearData.title1);
+  
   description1Element
     .html(`${currentYearData.description1}<br><br>`)
     .append('a')
     .attr('href', `${currentYearData.link1}`)
     .attr('target', '_blank') 
     .text('reference link');
+  
   title2Element.text(currentYearData.title2);
+  
   description2Element
     .html(`${currentYearData.description2}<br><br>`)
     .append('a')
     .attr('href', `${currentYearData.link2}`)
     .attr('target', '_blank') 
     .text('reference link');
+  
   title3Element.text(currentYearData.title3);
+  
   description3Element
     .html(`${currentYearData.description3}<br><br>`)
     .append('a')
     .attr('href', `${currentYearData.link3}`)
     .attr('target', '_blank') 
     .text('reference link');
+
+  hiddenContainer2Image
+    .html('')
+    .append('img')
+    .attr('src', `/img/${currentYearData.year}-vp.jpeg`)
+    .attr('alt', `${currentYearData.year} US President Vice`)
+    .attr('width', '250')
+    .attr('height', '350');
+  
+  hiddenContainer2Name.text(currentYearData.vp_name)
+
+  hiddenContainer1BioTitle.text('Biography')
+
+  hiddenContainer1Bio.text(currentYearData.bio)
 
   chartContainer.selectAll('.dem-bar')
     .attr('fill', d => (d.year === currentYearData.year ? 'blue' : 'lightgrey'));
@@ -98,7 +123,9 @@ d3.csv('/data/dataset.csv').then(function (data) {
     description3: d.description3,
     link1: d.link1,
     link2: d.link2,
-    link3: d.link3
+    link3: d.link3,
+    vp_name: d.vp_name,
+    bio: d.bio
   }));
 
   const margin = { top: 80, right: 20, bottom: 50, left: 60 };

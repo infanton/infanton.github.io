@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>US Presidential Elections 1908 - 2020</title>
+  <title>US Presidential Winners (1996-2020)</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -28,6 +28,36 @@
 
       <div class="flex-container">
 
+        <div class="flex-item-button">
+          <button id="showContainerButton1" class="custom-button">Show Biography</button>
+        </div>
+
+        <div class="flex-item-button">
+          <button id="showContainerButton2" class="custom-button">Show Vice President</button>
+        </div>
+
+    </div>
+
+    <div class="flex-container">
+
+      <div class="hidden-flex-container" id="hiddenContainer1">
+        <div class="flex-item box">
+          <div class="title" id="hiddenContainer1BioTitle"></div>
+          <div class="description" id="hiddenContainer1Bio"></div>
+        </div>
+      </div>
+
+      <div class="hidden-flex-container" id="hiddenContainer2">
+        <div class="flex-item box">
+          <div class="image" id="hiddenContainer2Image"></div>
+          <div class="name" id="hiddenContainer2Name"></div>
+      </div>
+      </div>
+
+    </div>
+
+      <div class="flex-container">
+
         <div class="flex-item box">
             <div class="title" id="title1"></div>
             <div class="description" id="description1"></div>
@@ -49,5 +79,17 @@
   </div>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="/js/script.js?version=7"></script>
+  <script>
+    document.getElementById('showContainerButton1').addEventListener('click', function () {
+      const hiddenContainer = document.getElementById('hiddenContainer1');
+      hiddenContainer.style.display = hiddenContainer.style.display === 'none' ? 'flex' : 'none';
+      this.innerHTML = hiddenContainer.style.display === 'none' ? "Show Biography" : "Close Biography";
+    });
+    document.getElementById('showContainerButton2').addEventListener('click', function () {
+      const hiddenContainer = document.getElementById('hiddenContainer2');
+      hiddenContainer.style.display = hiddenContainer.style.display === 'none' ? 'flex' : 'none';
+      this.innerHTML = hiddenContainer.style.display === 'none' ? "Show Vice President" : "Close Vice President";
+    });
+  </script>
 </body>
 </html>

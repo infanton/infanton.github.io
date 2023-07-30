@@ -41,6 +41,16 @@ body, html {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.flex-item-button {
+  width: 50%;
+  padding: 15px;
+  box-shadow: none;
+  background-color: none;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
 .box {
   border: 1px solid #ccc;
   padding: 10px;
@@ -66,4 +76,30 @@ body, html {
   font-size: 18px;
   line-height: 1.5;
   color: #555;
+}
+
+.hidden-flex-container {
+  display: none;
+  margin-top: 15px;
+}
+
+button {
+  margin-top: 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.custom-button {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.custom-button:hover {
+  background-color: #0056b3;
 }
