@@ -8,9 +8,6 @@ const title3Element = d3.select('#title3');
 const description1Element = d3.select('#description1');
 const description2Element = d3.select('#description2');
 const description3Element = d3.select('#description3');
-const link1Element = d3.select('#link1');
-const link2Element = d3.select('#link2');
-const link3Element = d3.select('#link3');
 const chartContainer = d3.select('#chart');
 let dataset;
 
@@ -45,28 +42,28 @@ function updateChart() {
     .attr('alt', `${currentYearData.year} US President`)
     .attr('width', '250')
     .attr('height', '350');
-  nameElement.text(currentYearData.name);
+  nameElement.text(currentYearData.name).append;
   title1Element.text(currentYearData.title1);
-  description1Element.text(currentYearData.description1);
-  link1Element
+  description1Element
     .html('')
+    .text(`${currentYearData.description1} `)
     .append('a')
     .attr('href', `${currentYearData.link1}`)
-    .text('Source Link');
+    .text('reference link');
   title2Element.text(currentYearData.title2);
-  description2Element.text(currentYearData.description2);
-  link2Element
+  description2Element
     .html('')
+    .text(`${currentYearData.description2} `)
     .append('a')
     .attr('href', `${currentYearData.link2}`)
-    .text('Source Link');
+    .text('reference link');
   title3Element.text(currentYearData.title3);
-  description3Element.text(currentYearData.description3);
-  link3Element
+  description3Element
     .html('')
+    .text(`${currentYearData.description3} `)
     .append('a')
     .attr('href', `${currentYearData.link3}`)
-    .text('Source Link');
+    .text('reference link');
 
   chartContainer.selectAll('.dem-bar')
     .attr('fill', d => (d.year === currentYearData.year ? 'blue' : 'lightgrey'));
