@@ -7,13 +7,48 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <h1>US Presidential Winners (1980-2020)</h1>  
-  <div class="slideshow-container">
-    <div class="year"></div>
-    <div class="image"></div>
-    <div class="name"></div>
-    <div class="description"></div>
-    <div id="chart"></div>
+    <h1>US Presidential Winners (1996-2020)</h1>  
+    <div class="slideshow-container">
+      
+      <div class="year"></div>
+      <div class="timer"><span id="timer-value">60</span> seconds till next page</div>
+      
+      <div class="flex-container">
+
+          <div class="flex-item">
+              <div class="image"></div>
+              <div class="name"></div>
+          </div>
+
+          <div class="flex-item">
+              <div id="chart"></div>
+          </div>
+
+      </div>
+
+      <div class="flex-container">
+
+        <div class="flex-item box">
+            <div class="title" id="title1"></div>
+            <div class="description" id="description1"></div>
+            <div class="link" id="link1"></div>
+        </div>
+
+        <div class="flex-item box">
+            <div class="title" id="title2"></div>
+            <div class="description" id="description2"></div>
+            <div class="link" id="link2"></div>
+        </div>
+
+        <div class="flex-item box">
+            <div class="title" id="title3"></div>
+            <div class="description" id="description3"></div>
+            <div class="link" id="link3"></div>
+        </div>
+
+      </div>
+      
+    </div>
   </div>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="/js/script.js?version=7"></script>
