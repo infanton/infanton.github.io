@@ -16,7 +16,7 @@ function updateTimer(timeInSeconds) {
   timerValueElement.textContent = timeInSeconds;
 }
 
-let timerSeconds = 90d;
+let timerSeconds = 90;
 function startTimer() {
   updateTimer(timerSeconds);
 
